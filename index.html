@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS</title>
+    <script src="angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="App" ng-controller="miTramite">
+        <form method="post" name="miTramiteForm">
+            <label for="tramite">Trámite</label>
+            <select name="tram" id="tram" ng-model="tramite">
+                <option ng-repeat="x in tramites" value="{{x}}">{{x}}</option>
+            </select>
+            <br>
+            <label for="nombreCompleto">Nombre y Apellidos</label>
+            <input type="text" id="nombreCompleto" ng-model="nombreCompleto"  name="nombreCompleto">
+            <br>
+            <label for="edad">Edad</label>
+            <input type="number" id="edad" ng-model="edad"  name="edad">
+            <p id="menordeedad"></p>
+            <br>
+            <label for="fecha">Fecha</label>
+            <input type="date" id="fecha" name="fecha" ng-model="fecha">
+            <br>
+            <button type="submit">Enviar</button>
+        </form>
+        <div id="notificacion"></div>
+        <table id="tabla">
+            <tr ng-repeat="x in tramites">
+                <td>{{$tramite}}</td>                
+            </tr>
+        </table>
+    </div>
+    <script src="js.js"></script>
+</body>
+
+</html>
